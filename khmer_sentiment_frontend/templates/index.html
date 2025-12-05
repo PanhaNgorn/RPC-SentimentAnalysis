@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Khmer Sentiment Chat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-top">
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/ITC.png') }}" alt="ITC Logo">
+        <div class="title-text">
+          <div class="khmer">វិទ្យាស្ថានបច្ចេកវិទ្យាកម្ពុជា</div>
+          <div class="english">Institute of Technology of Cambodia</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <nav class="top-nav-links">
+          <a href="#">Home</a>
+          <a href="#">About Me</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Chat UI + Terminal -->
+  <div class="main-content">
+    <!-- Chat UI -->
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Sentiment Analysis</h2>
+        <div class="online-status">KhmerBot</div>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="message incoming">
+          <div class="message-content">👋 សួស្តី! អ្នកចង់អោយខ្ញុំជួយវិភាគទៅលើពាក្យអ្វី?</div>
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="សូមវាយពាក្យ...">
+        <button class="send-button" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <!-- Terminal -->
+    <div class="terminal-container">
+      <div class="terminal-header">🔌 RPC Process</div>
+      <pre id="terminalOutput" class="terminal-output">
+$ KhmerBot RPC client initialized...
+$ Waiting for user input...
+      </pre>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
